@@ -1,6 +1,6 @@
 # uxn-unx
 
-How to build an OS from scratch.
+How to build an OS from scratch. This page is work-in-progress set of notes, as I talk to [Devine] and [Nina].
 
 ## 6th of February, 2022
 
@@ -27,3 +27,5 @@ First is how the [@devine] desined it, quoting them
 > Uxn is the CPU, think of uxn like the 6502 residing inside the NES. Varvara is only a device API spec, think of it like the Commodore 64, or the Atari. An operating system written for varvara, in uxntal, would allocate time and devices control to applications in memory.
 
 Second is how I saw it in real life: [uxn] is supposed to run on top of some kind of CPU, [varvara] is supposed to run on top of some kind of OS.
+
+I could do a unix-like operating system for [varvara]. What do I want, and what my goal here?
