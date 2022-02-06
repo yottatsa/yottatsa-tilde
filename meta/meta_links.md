@@ -1,1 +1,1 @@
-[markdown_py]: <https://python-markdown.github.io>`markdown_py`
+[markdown_py]: <https://python-markdown.github.io>
