@@ -4,6 +4,6 @@ I've always been inspired with the thing that I recently learnt the name of, [pe
 
 * preservation and integration of old tech,
 * restoration of lost skills: [PCMCIA Cards][cardbarker], [mechanical typewriters][Olympia],
-* designing low-power or Unix-like compact systems.
+* designing (or rather [fantasizng on][uxn-unx]) low-power or Unix-like compact systems.
 
 This place is designed to contain the thoughts and the artifacts during my journey.
