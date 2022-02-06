@@ -1,5 +1,5 @@
 ALL = $(shell find -name '*.md' ! -name 'meta_*' | sed 's,\.md$$,.html,')
-LINKS = meta/meta_links.md
+LINKS = $(shell find -name 'meta_links.md')
 CONFIG = meta/config.yaml
 
 all: $(ALL)
