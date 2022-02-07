@@ -1,8 +1,9 @@
-[cardbarker]: /~yottatsa/preservation/cardbarker/
-[Olympia]: /~yottatsa/preservation/olympia/
+[cardbarker]: cardbarker.html
+[Olympia]: olympia.html
 [permacomputing]: <https://wiki.xxiivv.com/site/permacomputing.html>
 [paradise]: <https://wiki.xxiivv.com/site/paradise.html>
 [markdown_py]: <https://python-markdown.github.io>
-[uxn-unx]: /~yottatsa/uxn-unx/
-[about]: /~yottatsa/about/
+[uxn-unx]: uxn-unx.html
+[about]: about.html
+[updates]: updates.html
 [render_py]: <https://github.com/yottatsa/yottatsa.github.io/tree/master/render>

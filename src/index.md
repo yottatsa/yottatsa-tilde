@@ -1,3 +1,5 @@
+[updates]
+
 # just a space for notes
 
 I've always been inspired with the thing that I recently learnt the name of, [permacomputing]. This goes to the all things I've been working on recently, like
