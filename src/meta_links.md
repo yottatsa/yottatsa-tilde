@@ -5,5 +5,4 @@
 [markdown_py]: <https://python-markdown.github.io>
 [uxn-unx]: uxn-unx.html
 [about]: about.html
-[updates]: updates.html
 [render_py]: <https://github.com/yottatsa/yottatsa.github.io/tree/master/render>

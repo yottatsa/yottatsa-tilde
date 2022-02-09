@@ -21,6 +21,11 @@ class HTMLProcessor(Treeprocessor):
     def format_title(self, title):
         return title
 
+    def make_header(self):
+        header = self.newroot.makeelement('header', {})
+        self.body.insert(0, header)
+        SubElement(header, 'a', href='index.html').text = 'index'
+
     def run(self, root):
         self.root = root
         self.newroot = self.setup()
@@ -29,6 +34,8 @@ class HTMLProcessor(Treeprocessor):
         if title_text:
             title = SubElement(self.head, 'title')
             title.text = self.format_title(title_text)
+
+        self.make_header()
 
         return self.newroot
 
