@@ -1,0 +1,3 @@
+[submodule "extensions/yafg"]
+	path = extensions/yafg
+	url = https://git.sr.ht/~ferruck/yafg
