@@ -1,3 +1,5 @@
 body { background-color: white; }
 main { max-width: 640px; }
-.license { font-size: 0.9em; text-align: right; padding: 0 0 0 50%; }
+main p, main figure { margin: 2em 0; padding: 0; }
+main p a { white-space: nowrap; }
+figcaption { margin: 1em 0; padding 0; font-style: italic; }

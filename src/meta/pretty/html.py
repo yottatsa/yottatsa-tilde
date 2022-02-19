@@ -7,9 +7,8 @@ class HTMLProcessor(Treeprocessor):
     def setup(self):
         newroot = self.root.makeelement("div", {})
         self.html = SubElement(newroot, "html")
-        self.html.text = "\n"
         self.head = SubElement(self.html, "head")
-        self.head.tail = "\n"
+        self.head.text = "\n"
         self.body = SubElement(self.html, "body")
         self.root.tag = "main"
         self.root.tail = ""
@@ -30,21 +29,29 @@ class HTMLProcessor(Treeprocessor):
         self.body.insert(0, header)
         SubElement(header, "a", href="index.html").text = "index"
 
-    def make_link(self, **kwargs):
-        link = SubElement(self.head, "link")
+    def meta(self, elm, **kwargs):
+        link = SubElement(self.head, elm)
         link.attrib.update(kwargs)
+        link.tail = "\n"
 
     def run(self, root):
         self.root = root
         self.newroot = self.setup()
+        self.html.attrib["lang"] = "en"
+        self.meta(
+            "meta",
+            **{"content": "text/html;charset=UTF-8", "http-equiv": "Content-type"}
+        )
 
         title_text = self.get_title()
         if title_text:
             title = SubElement(self.head, "title")
             title.text = self.format_title(title_text)
+            title.tail = "\n"
+
+        self.meta("link", rel="stylesheet", href="../assets/style.css")
 
         self.make_header()
-        self.make_link(rel="stylesheet", href="../assets/style.css")
 
         return self.newroot
 

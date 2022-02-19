@@ -1,7 +1,7 @@
 # about
-My name is Atsuko Ito, aka `yottatsa`, Akko[rori~n], 伊藤惇子.
+My name is Atsuko Ito, aka `yottatsa`, <abbr>Akko</abbr>rori~n, 伊藤惇子.
 
-I read mail at me [at] yottatsa.name, and you can [find me on keybase](https://keybase.io/yottatsa).
+If you want to contact me, drop me a line to me at yottatsa dot name, or find me on [tilde.chat] IRC.
 
 I've always been inspired with the thing that I recently learnt the name of, [permacomputing]. This goes to the all things I've been working on recently, like
 

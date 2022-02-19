@@ -1,6 +1,9 @@
 # Infinite Paper Machine
 
-Computer interface for a typewriter. Inspired by TTY interfaces for their line-by-line UX, and [The Diamond Age] for pen and paper messaging interface.
+Computer interface for a typewriter. Inspired by 
+* TTY interfaces for their line-by-line UX;
+* OberonOS, C64 BASIC for type anywhere command interfaces; and
+* [The Diamond Age] for pen and paper messaging interface.
 
 ![Render of typewriter with a wikipedia article on it.](../assets/typewriter-render.png)
 

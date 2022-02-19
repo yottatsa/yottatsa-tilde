@@ -9,7 +9,12 @@
 ## AV
 
 * Nikon N80
+* Pair of MDLP players, Sony [] and []
 
-## Comms
+## Radio
 
-* pair of [VHF radios][vhf] to talk around to my gf
+Setup that allows us to talk to each other in the city with around 3km range
+
+* pair of 5W [VHF radios][vhf]
+* small 50cm antenna with magnetic base on a balcony to have good signal at home
+* pair of portable whip antennas

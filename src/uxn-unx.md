@@ -11,7 +11,7 @@ The [uxn]/[varvara] concept looks beautiful as it is. Especially with [paradise]
 As a unix-like systems engineer, I really miss fork/wait/kill in varvara, this way I could build something unix-like out of it.
 Tho I'm still worried I just do things the way I learnt things should be. This approach works well in commercial world, sure. Would it work in the *world of art*?
 
-In classic, monolithic, unix-like operating systems, there is always a process, and the way to create a process is to `fork` itself. Then the child would `exec` into new application, much like [launcher] in [varvara] can run another ROM. Arguments to the new app are passed inside the `syscall` and straight to the `int main(int argc, char *argv)`. Operating system there is no more that the library with the interfaces, `syscall`, protected behind interrupts.
+In classic, monolithic, unix-like operating systems, there is always a process, and the way to create a process is to `fork` itself. Then the child would `exec` into new application, much like [launcher][varvara_launcher] in <i>varvara</i> can run another ROM. Arguments to the new app are passed inside the `syscall` and straight to the `int main(int argc, char *argv)`. Operating system there is no more that the library with the interfaces, `syscall`, protected behind interrupts.
 
 Most of it can be done with [uxn]/[varvara] with its devices and vectors. 
 
@@ -22,7 +22,7 @@ This, however, poses a question yet to solve:
 * do I want an OS inside the [uxn], self-hosted and handling device access; 
 * or do I want an OS outside of [varvara], where [uxn] is the only runtime and the microkernel is just juggling devices and merely VMs?
 
-First is how the [@devine] desined it, quoting them
+First is how the [Devine] desined it, quoting them
 
 > Uxn is the CPU, think of uxn like the 6502 residing inside the NES. Varvara is only a device API spec, think of it like the Commodore 64, or the Atari. An operating system written for varvara, in uxntal, would allocate time and devices control to applications in memory.
 

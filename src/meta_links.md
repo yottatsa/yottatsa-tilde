@@ -6,3 +6,14 @@
 [meta_src]: https://github.com/yottatsa/yottatsa-tilde/tree/main/src/meta
 [Oscean]: https://wiki.xxiivv.com/site/oscean.html
 [The Diamond Age]: https://www.nealstephenson.com/the-diamond-age.html
+[about_tilde_gay]: /about.html
+[catgirl]: https://git.causal.agency/catgirl/about/
+[pounce]: https://git.causal.agency/pounce/about/
+[nina]: https://twitter.com/nina_kali_nina
+[tilde.chat]: https://tilde.chat
+[ElementTree]: https://docs.python.org/3/library/xml.etree.elementtree.html
+[Devine]: https://wiki.xxiivv.com/site/about.html
+[varvara]: https://wiki.xxiivv.com/site/varvara.html
+[uxn]: https://wiki.xxiivv.com/site/uxn.html
+[varvara_launcher]: https://wiki.xxiivv.com/site/varvara_launcher.html
+[gemini]: https://web.archive.org/web/20220116074439/https://gemini.circumlunar.space/docs/specification.html
