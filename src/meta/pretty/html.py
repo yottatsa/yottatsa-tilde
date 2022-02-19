@@ -1,5 +1,6 @@
 from markdown.extensions import Extension
 from markdown.treeprocessors import Treeprocessor
+from markdown.postprocessors import Postprocessor
 from xml.etree.ElementTree import SubElement
 
 
@@ -38,10 +39,7 @@ class HTMLProcessor(Treeprocessor):
         self.root = root
         self.newroot = self.setup()
         self.html.attrib["lang"] = "en"
-        self.meta(
-            "meta",
-            **{"content": "text/html;charset=UTF-8", "http-equiv": "Content-type"}
-        )
+        self.meta("meta", charset="utf-8")
 
         title_text = self.get_title()
         if title_text:
@@ -56,6 +54,12 @@ class HTMLProcessor(Treeprocessor):
         return self.newroot
 
 
+class DoctypePostprocessor(Postprocessor):
+    def run(self, text):
+        return f"<!DOCTYPE html>{text}"
+
+
 class HTML5(Extension):
     def extendMarkdown(self, md, *_):
         md.treeprocessors.register(HTMLProcessor(md), "html5", 1)
+        md.postprocessors.register(DoctypePostprocessor(md), "doctype", 1)

@@ -13,11 +13,11 @@ In this iteration:
 
 * dynamic pages generation is triggered from Makefiles, allowing separation of code;
 * writing is less cluttered, as the sources are stores separatelu from the website like in [Oscean];
-* metadata is inferred from both Git and markdown files, rather then filesystem attributes.
+* metadata is inferred from both Git and markdown files, rather then filesystem attributes,
+* wiki-style links, and links verification.
 
 ## Todo
 
-* print out unresolved links
 * add history and meta for pages
 * add footer
 * build [`gmi`][gemini] out of Markdown

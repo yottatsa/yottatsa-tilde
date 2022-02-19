@@ -46,7 +46,7 @@ class RedLinksProcessor(Treeprocessor):
 
 
 class MissingLinksPostprocessor(Postprocessor):
-    RE_MD_LINKS = re.compile(r"\[[^\]]+\]")
+    RE_MD_LINKS = re.compile(r"(\[[^\]]+\])[^\[]")
 
     def run(self, text):
         linkblocks = set(MissingLinksPostprocessor.RE_MD_LINKS.findall(text))
