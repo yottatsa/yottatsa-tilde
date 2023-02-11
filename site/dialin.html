@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Dial-in server</title>
+<link href="../assets/style.css" rel="stylesheet">
+</head><body><header><a href="index.html">index</a></header><main>
+<h1>Dial-in server</h1>
+<p>Configure PPP:</p>
+<pre><code># /etc/ppp/options:
+asyncmap 0
+crtscts
+local
+lock
+passive
+proxyarp
+lcp-echo-interval 30
+lcp-echo-failure 4
+netmask 255.255.255.0
+192.168.1.7:192.168.1.8
+noauth
+silent
+</code></pre>
+<p>Setting up alias:</p>
+<pre><code>alias ppp="exec /usr/sbin/pppd -detach"
+</code></pre>
+<p>Automating <code>getty</code>: </p>
+<pre><code># /etc/udev/rules.d/99-usb-serial.rules
+# get attributes: `udevadm info --attribute-walk -n /dev/...`
+# reload rules: `udevadm control --reload-rules`
+SUBSYSTEM=="tty", DRIVERS=="pl2303", TAG+="systemd", ENV{SYSTEMD_WANTS}="serial-getty@$name.service"
+</code></pre>
+<p><a href="https://gist.github.com/cbrake/4337154"><code>udev</code> rules, <cite>cbrake</cite></a>.</p>
+</main></body></html>

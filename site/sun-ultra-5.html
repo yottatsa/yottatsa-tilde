@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Sun ULTRA 5</title>
+<link href="../assets/style.css" rel="stylesheet">
+</head><body><header><a href="index.html">index</a></header><main>
+<h1>Sun ULTRA 5</h1>
+<p>It was used by [Andy Colebourne] to work on AC3D.</p>
+<h2>The internals</h2>
+<p>It's a quite neat "pizza-box" computer with spacious layout inside. PCI riser dominating the system part, and a PSU/CD-ROM/FDD filling up the rest. Infamous RTC/CMOS chip is modified by previous owner and features coin battery holder.</p>
+<h2>The boot-up</h2>
+<p>Pulled a hard drive and inspected the linux installation, reset the root password, and assembled it back.</p>
+<p>Connected a keyboard/mouse and a VGA monitor, powered on, got some LED blinks, some HDD seek noises. Didn't get anything on the screen tho. Knowing that it might be already in linux, tried poking it blindly with SysRq and succeeded in rebooting.</p>
+<p>Internet mentions that VGA might not work out-of-the-box, so pulling the hard drive again and setting up serial consoles (urgh, Ubuntu 7.something is using event.d). The workstation has two serials, DB25 with sockets on port A and DB9 wirt pins on port B; gonna <s>have fun</s> struggle with the wide one, so all the hopes on latter&nbsp;&mdash; there is very specific null-modem-usb-serial exacttly for this.</p>
+<p>Assembled it back, powered it up, waited for a minute and ...we're IN. Tried to make the kernel to print out the boot log, but tough luck.</p>
+<p>Back to internets, it tells that there is a system console when the keyboard is not plugged. A-a-and with the transgender adapter it shows the OpenBoot.</p>
+<h2>The repair</h2>
+<p>Quick diagnostics shows second issue: the CD-ROM times out while reading files. It started working (kind of) after some nice cleaning; turns out it was all covered with the UK finest black dust. I replaced original LG CRD-8240B with the similar model, CRD-8521B from 2001, which differs in details like the board size, mechanics, and the drive speed, but has exactly the same front face, making the face swap possible. This will preserve original look!</p>
+<figure id="__yafg-figure-1">
+<img alt="Photo of open workstation." height="360" src="../assets/ultra-cdrom.jpeg" title="Old CD-ROM with newer and aged faceplate, and new CD-ROM with old faceplate." width="640">
+<figcaption>Old CD-ROM with newer and aged faceplate, and new CD-ROM with old faceplate.</figcaption>
+</figure>
+<h2>SunOS 5.6</h2>
+<p>I installed full Solaris 2.6 (SunOS 5.6), so I can run some programs. Finally, I can configure framebuffer to 640x480 and get the singal to the [sync converter], and then CRT.</p>
+<figure id="__yafg-figure-2">
+<img alt="A photo of an XDM displaying login prompt from the Sun workstation on a CRT monitor via sync adapter. A plushie sits on top." height="1138" src="../assets/ultra-xdm.jpeg" title="It booted!" width="640">
+<figcaption>It booted!</figcaption>
+</figure>
+<p>It has no usable shell which makes the exploration <em>very</em> annoying. However, there at least some line editing with <code>telnet</code>/<code>openwin</code>/X forwarding. </p>
+<h2>ToDo</h2>
+<ul>
+<li><code>dtpower(1M)</code></li>
+</ul>
+</main></body></html>

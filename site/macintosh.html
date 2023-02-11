@@ -8,28 +8,36 @@
 It was used as a word processor primarily around 1995.</p>
 <h2>ToDo</h2>
 <ul>
-<li>try out PPP, SCSI, Ethernet</li>
+<li>try out Ethernet</li>
 <li>find a toolchain</li>
-<li>MacTerminal and mactar</li>
+<li>MacTerminal</li>
 </ul>
 <h2>Repairs</h2>
 <ul>
 <li>floppy drive eject mechanism has been cleaned and oiled;</li>
 <li>CMOS battery has been replaced;</li>
 <li>CRT has been adjusted to fill the screen;</li>
-<li>unclogged and refilled printer cartrige.</li>
+<li>unclogged and refilled printer cartrige;</li>
+<li>memory upgraded to 10MB;</li>
+<li>FPU installed;</li>
+<li>SCSI hard drive is replaced with the [BlueSCSI];</li>
+<li>Iomega Zip 100 to transfer files.</li>
+</ul>
+<h2>Necessary Macinstosh software</h2>
+<p>For clean System 7.0.1 I found this software useful</p>
+<ul>
+<li><a href="http://web.archive.org/web/20011125070522/http://download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/English-North_American/Macintosh/Utilities/SimpleText_1.3.txt">Simple Text</a> in addition to TeachText.</li>
+<li><i>StuffIt Expander 5.5 for System 7</i> to unpack <code>.sit.hqx</code>;</li>
+<li><a href="http://web.archive.org/web/20011202081927/http://download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/English-North_American/Macintosh/Utilities/Disk_Copy/">Disk Copy 6</a> to open images.</li>
 </ul>
 <h2>Interoperability</h2>
 <p>Macintosh relies on multi-stream files on filesystem, which makes file exchange a little cumbersome. It's best to keep files either in text, <code>.hqx</code> or <i>Apple Double</i>, binary representation.</p>
 <p>What works:</p>
 <ul>
-<li>1.4M floppy drives are readable with an USB FDD on linux, and contain <code>hfs</code> filesystem;</li>
+<li>1.4M floppy and Iomega Zip drives are readable on linux, and contain <code>hfs</code> filesystem;</li>
 <li><code>unar</code> can handle both <code>.hqx</code> and <code>.sit</code> to peek into its content, and extracting streams as separate files;</li>
-<li><a href="http://web.archive.org/web/20011202081927/http://download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/English-North_American/Macintosh/Utilities/Disk_Copy/">Disk Copy</a> is a must;</li>
-<li><i>StuffIt Expander 4 for System 7</i> unpacks <code>.sit.hqx</code>;</li>
+<li><i>MacTar</i> works just fine;</li>
 <li><i>The Unarchiver</i> for Mac OS X opens <code>.sit</code> just fine;</li>
-<li><i>ShrinkWrap™ 2.0</i> can mount some images, like <code>.img</code> (same way as <code>.dmg</code> are mounted on modern Mac OS X);</li>
-<li><a href="http://web.archive.org/web/20011125070522/http://download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/English-North_American/Macintosh/Utilities/SimpleText_1.3.txt">Simple Text</a> for most of the needs;</li>
 </ul>
 <p>What's somewhat works:</p>
 <ul>
@@ -39,17 +47,29 @@ It was used as a word processor primarily around 1995.</p>
 </ul>
 <p>What didn't work:</p>
 <ul>
-<li>can't reliably handle 800K floppies;</li>
+<li>can't reliably handle 800K floppies on PC;</li>
 </ul>
 <h2>Connectivity</h2>
-<p>RS-232 is known to be more error-prone than RS-422, even on short distance. USB RS-232 is readily available, so the only trick is a short and shielded serial cable.</p>
+<p>The only readily available option is Macintosh Serial to RS-232 Null-modem adapter on 57600bps.</p>
 <ul>
 <li><i>ZTerm 1.0.1</i> works just fine, note that it configured for software flow control instead of hardware one that used in linux by default;</li>
 <li>to setup terminal, run <code>agetty --local-line -hm 57600 ttyUSB0 vt100</code>;</li>
 <li><code>rzsz</code> gives ability to exchange files over serial connection;</li>
 </ul>
 <h2>Networking</h2>
-<p>For System 7, <i>MacTCP 2.0.x</i> and <i>MacPPP 2.0.1</i> are known to work. I found a few resouces:</p>
+<p>For System 7, <i>MacTCP 2.0.x</i>, <i>MacPPP 2.0.1</i>, and a minimal <code>pppd</code> setup is enough. The only needed configurations are the next.</p>
+<p>For <code>/etc/ppp/options</code>:</p>
+<pre><code>proxyarp
+auth
+&lt;local-ip&gt;:&lt;remote-ip&gt;
+</code></pre>
+<p>And for Macintosh, a domain name resolver in the MacTCP control panel. Reboot is required to apply the changes.</p>
+<ul>
+<li><i>NCSATelnet</i> takes ~600kB RAM and also supports FTP;</li>
+<li><i>NCSAMosaic 3.0</i> supports HTTP/1.0 and gopher, takes about 4M of RAM;</li>
+<li><i>MacWeb</i> supports HTTP/1.0 and gopher, no images tho;</li>
+</ul>
+<p>I found a few resouces:</p>
 <ul>
 <li><a href="http://web.archive.org/web/19991001223806/http://www.rtis.com/nat/user/toolbox/oldmacs/">by The Web Toolbox</a>,</li>
 <li><a href="http://web.archive.org/web/20000817225026/http://www.sjoki.uta.fi/~shmhav/mac-internet-faq.txt">by shmhav</a>,</li>
