@@ -10,6 +10,10 @@ clean:
 	rm -f $(ALL)
 	rm -f $(shell ls tmp_*.md)
 
+index:
+	rm -f tmp_index.md ../site/index.html
+	make ../site/index.html
+
 tmp_links.md: $(LINKS)
 	(cat $(LINKS); meta/links.sh) > $@
 
@@ -22,4 +26,4 @@ tmp_index.md:
 ../site/index.html: meta_index.md tmp_index.md tmp_links.md
 	@echo $@; cat $^ | $(MARKDOWN_PY) -f $@
 
-.PHONY: all clean 
+.PHONY: all clean index
