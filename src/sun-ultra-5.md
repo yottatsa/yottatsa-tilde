@@ -12,7 +12,9 @@ Pulled a hard drive and inspected the linux installation, reset the root passwor
 
 Connected a keyboard/mouse and a VGA monitor, powered on, got some LED blinks, some HDD seek noises. Didn't get anything on the screen tho. Knowing that it might be already in linux, tried poking it blindly with SysRq and succeeded in rebooting.
 
-Internet mentions that VGA might not work out-of-the-box, so pulling the hard drive again and setting up serial consoles (urgh, Ubuntu 7.something is using event.d). The workstation has two serials, DB25 with sockets on port A and DB9 wirt pins on port B; gonna <s>have fun</s> struggle with the wide one, so all the hopes on latter&nbsp;&mdash; there is very specific null-modem-usb-serial exacttly for this.
+Internet mentions that VGA might not work out-of-the-box: integrated ATI RAGE has [sync-on-green] output and it's not working on mine and many others displays.
+
+ so pulling the hard drive again and setting up serial consoles (urgh, Ubuntu 7.something is using event.d). The workstation has two serials, DB25 with sockets on port A and DB9 wirt pins on port B; gonna <s>have fun</s> struggle with the wide one, so all the hopes on latter&nbsp;&mdash; there is very specific null-modem-usb-serial exacttly for this.
 
 Assembled it back, powered it up, waited for a minute and ...we're IN. Tried to make the kernel to print out the boot log, but tough luck.
 
@@ -37,3 +39,5 @@ It has no usable shell which makes the exploration *very* annoying. However, the
 ## ToDo
 
 * `dtpower(1M)`
+
+[sync-on-green]: http://web.archive.org/web/20221219134745/http://ps-2.kev009.com/sog/

@@ -13,6 +13,7 @@ Also,
 * [Sun ULTRA 5][sun-ultra-5]
 * [NEC PC-9821La10/8][nec-pc9821la10-8]
 * few [Vortex86][vortex86]
+* ADI MicroScan 5V
 
 
 ## AV
