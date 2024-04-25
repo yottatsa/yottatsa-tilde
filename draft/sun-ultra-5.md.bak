@@ -1,0 +1,79 @@
+# Sun ULTRA 5
+
+## The hardware
+
+A neat workstation that once belonged to [Andy Colebourne],
+who used it to work on AC3D.
+
+It's "pizza-box" case boasts a spacious layout inside, with a PCI riser
+dominating the system part, and a PSU/CD-ROM/FDD filling up the rest. The
+infamous [proprietary RTC/CMOS][sun-cmos] chip has been modified by the
+previous owner and features a coin battery holder. 
+
+Computer powers up, the keyboard LEDs lits up and the HDD mades seek noises. 
+However, it shows no output on the our lab's CRT. I remembered that the computer
+had Ubuntu installed, so I succeeded to gracefully reboot it by poking it
+blindly with SysRq. 
+
+Integrated ATI RAGE has *sync-on-green* output despite having a usual 15-pin
+VGA connector, probably for compatibility with other Sun peripheals. There are
+some [monitors that support sync-on-green][sync-on-green-support], and a few
+[video cards that work with Sun][sun-videocards].
+
+I powered it off, pulled the hard drive, and connected it to another computer to
+reset the password and enable serial shell.
+
+![](# "
+The workstation has two serials, DB25 with sockets on port A and DB9 wirt pins on port B; gonna have fun struggle with the wide one, so all the hopes on latter
+ — there is very specific null-modem-usb-serial exacttly for this.
+")
+
+Finally, shell has appeared after a minute or two (no kernel console tho). I
+tried to setup kernel console/printk the usual Linux-on-PC way, but it didn't
+work. It turned out that:
+
+- there is a system serial console when the keyboard isn't plugged in
+- it can be [configured from OpenBoot][sun-openboot-setup]
+- and the OpenBoot itself is kinda amazing.
+
+This workstation is meant to run original OS with it's mighty X11 capabilities.
+I found a few different distributions, from Solaris 2.5.1 to Open Solaris 9.
+Turned out, none of those CDs would boot (setting up a netboot wasn't something
+I wanted to attempt). Disassembling and inspecting the oiginal LG CRD-8240B
+CD-ROM drive has revealed that all the internals (incuding the lens) was
+covered with the finest sticky black dust. Cleaning the drive helped, tho it
+occasionally get stuck either way, mostly when the it sits on the side. I
+eventually replaced it with a similar model, the CRD-8521B from 2001. 
+
+
+![Photo of open workstation, Old CD-ROM with newer and aged faceplate, and new CD-ROM with old faceplate..](../assets/ultra-cdrom.jpeg "
+Despite differences in the board size, mechanics, and drive
+speed, this newer model had the same front face, allowing for a seamless face
+swap and preserving the original look of the computer.
+")
+
+I started with Solaris 2.6 (SunOS 5.6) as it was the latest distribution I
+managed to find and boot with no prior knowledge. I had no luck with on-board
+video, *ATI 3D RAGE II+DVD*, it only worked with the sync converter. I also got
+[*SUN PGX64* aka *ATI RAGE XL*][sun-videocards], which is a popular and
+[supported card][sun-videocards-matrix] for this computer.
+
+- `m64config` configures both internal and discrete Sun PGX64 card
+- OpenBoot plays crucial role in configuring PCI devices, e.g. [PGX32 video modes][sun-pgx32-setup]
+- device files are created by postinstall scripts
+
+X server still hates me, `dtlogin` XDM kills the video output.
+
+![A photo of an XDM displaying login prompt from the Sun workstation on a CRT monitor via sync adapter. A plushie sits on top.](../assets/ultra-xdm.jpeg "
+Finally able to get the framebuffer to display properly on the CRT monitor via sync adapter in whooping 640x480.
+")
+
+
+## ToDo
+
+* `dtpower(1M)`
+
+[sun-videocards]: http://web.archive.org/web/20100523061936/https://everything2.com/title/Sun+graphics+cards
+[sun-videocards-matrix]: https://shrubbery.net/~heas/sun-feh-2_1/Devices/Graphics/graphics-matrix.html
+[sync-on-green-support]: http://web.archive.org/web/20221219134745/http://ps-2.kev009.com/sog/
+[sun-pgx32-setup]: http://web.archive.org/web/20130803194831/https://docs.oracle.com/cd/E19455-01/806-4629-05/6jdmq4im0/index.html

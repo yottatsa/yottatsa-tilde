@@ -9,7 +9,7 @@
 [about_tilde_gay]: /about.html
 [catgirl]: https://git.causal.agency/catgirl/about/
 [pounce]: https://git.causal.agency/pounce/about/
-[nina]: https://twitter.com/nina_kali_nina
+[nina]: http://ninakalinina.com
 [tilde.chat]: https://tilde.chat
 [ElementTree]: https://docs.python.org/3/library/xml.etree.elementtree.html
 [Devine]: https://wiki.xxiivv.com/site/about.html

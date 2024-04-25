@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<link href="../assets/style.css" rel="stylesheet">
+</head><body><header><a href="index.html">index</a></header><main>
+<p>Comparing available tools</p>
+<ul>
+<li>[libdsk-utils] and [cpmtools]</li>
+<li>[SAMdisk]</li>
+<li>[iDSK]</li>
+</ul>
+<h2>Directory listing</h2>
+<p>$ cpmls -f cf2dd boot720.dsk
+   $ samdisk dir boot720.dsk
+   $ iDSK boot.dsk -l</p>
+<h2>Transferring files</h2>
+<p>$ cpmcp -f cf2dd -T raw /dev/sde du54/DU54.DOC 0:</p>
+<p>dskform -type dsk -format pcw180 empty.dsk
+   iDSK empty.dsk -i myprog.bas
+   iDSK empty.dsk -l</p>
+<p>dskform -type dsk -format pcw720 empty.dsk
+   cpmcp empty.dsk myprog.bas 0:
+   cpmls empty.dsk</p>
+<h2>Read and write</h2>
+<p>MS-DOS 720K format is fine. For [Compaq][CompaqARMADA7800]:</p>
+<p>C:>format b: /f:720  # on compaq</p>
+<p>USB floppy + dd can easily write 720K from raw .img. For more options, use [SAMdisk] or [libdsk-utils]:</p>
+<p>$ samdisk copy /dev/sde f.dsk
+   $ </p>
+</main></body></html>

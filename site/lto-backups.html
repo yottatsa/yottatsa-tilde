@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<title>LTO Backups</title>
+<link href="../assets/style.css" rel="stylesheet">
+</head><body><header><a href="index.html">index</a></header><main>
+<h1>LTO Backups</h1>
+<h2>for system backup</h2>
+<p>It uses [<code>dump</code>][man_dump]/[<code>restore</code>][man_restore] under the hood.</p>
+<pre><code># mt stsetoptions scsi2logical  # figure out /etc/stinit.def
+                                # make /dev/tape symlink or use /dev/nst0
+$ cd backup
+$ tapebackup
+Target is required
+
+Dump these file systems:
+  /dev/mapper/volume            (     /) Last dump: Level 6, Date ...
+
+Usage: tapebackup [-t /dev/tape] -[0-9] TARGET [...]
+$ tapebackup -7 /dev/mapper/volume
+</code></pre>
+<h2>for <ruby>media<rt>anime</rt></ruby> backup</h2>
+<pre><code># mt stclearoptions scsi2logical
+</code></pre>
+<ol>
+<li><a href="https://github.com/yottatsa/tapeutils"><code>tapemount</code></a> mounts the tape cartrige based on the RFID chip
+   label to <code>/mnt/$LABEL</code>;</li>
+<li>[<code>animetape</code>][animeutils] without options shows pending items to sort.</li>
+<li>Operator need to sort out the <em>Pending</em> queue, either by creating 
+   directories that matching the titles, or moving the titles from <code>unsorted</code> 
+   to it's directories;</li>
+<li>Running <code>animetape --clowntown</code> will copy anything missing on tapes to a
+   current tape if anything is mounted to <code>/mnt/anime_*</code>, and then move it to
+   place. It will also make all missing copies. Finally, it will create index
+   symlinks in <code>/srv/backup/tape</code>;</li>
+<li><a href="https://github.com/yottatsa/tapeutils"><code>tapeumount</code></a> will unmount and eject the tape.</li>
+</ol>
+<p><code>INFO:__main__:Archive [HorribleRips] Gakuen Babysitters [1080p] as Gakuen Babysitters and backup to anime_A00003
+INFO:__main__:Backup [MTBB] Banana Fish (BD 1080p) to anime_A00003</code></p>
+</main></body></html>

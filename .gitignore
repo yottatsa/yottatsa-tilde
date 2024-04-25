@@ -1,4 +1,6 @@
 *.sw?
 *.pyc
+*.tmp
 .DS_Store
 src/tmp_*
+snippets/*

@@ -14,7 +14,7 @@ index:
 	rm -f tmp_index.md ../site/index.html
 	make ../site/index.html
 
-tmp_links.md: $(LINKS)
+tmp_links.md: $(LINKS) *.md
 	(cat $(LINKS); meta/links.sh) > $@
 
 tmp_index.md:
