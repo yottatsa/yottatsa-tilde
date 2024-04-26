@@ -28,7 +28,13 @@ TBD: PS/2 to InPort BUS mouse, PS/2 adapter on the back of the case
 
 ## Software
 
-[Nina] has good series of toots on it.
+[Nina] has good series of toots on it:
+
+* [GEOS/NewDeal Office on 80286](https://tech.lgbt/@nina_kali_nina/111649676644003594) <!-- [archive](../assets/1VzAX.zip) -->
+* [Soviet operating shell MASTER/МАСТЕР, plus Lexicon and Word&Deed text editors](https://tech.lgbt/@nina_kali_nina/111670752278950938) <!-- [archive](../assets/JK7xb.zip) -->
+* [XDC video player](https://tech.lgbt/@nina_kali_nina/111688925840619084)
+* [Mavica photos on 286](https://tech.lgbt/@nina_kali_nina/111613628255150315)
+* [CGA on TV](https://tech.lgbt/@nina_kali_nina/110938951278032846)
 
 ## Resources:
 
